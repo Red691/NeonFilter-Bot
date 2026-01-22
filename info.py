@@ -71,15 +71,15 @@ DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch
  
 # --- DATABASE --- 
 DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "filter_bot")
+DATABASE_NAME = environ.get('DATABASE_NAME', "filter_bot2")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Files')
 
 MULTIPLE_DATABASE = bool(environ.get('MULTIPLE_DATABASE', False))
 
 # --- Separate DBs if MULTIPLE_DATABASE = True ---
-O_DB_URI = environ.get('O_DB_URI', "")  # This Db Is For Other Data Store
-F_DB_URI = environ.get('F_DB_URI', "")  # This Db Is For File Data Store
-S_DB_URI = environ.get('S_DB_URI', "")  # This Db is for File Data Store When First Db Is Going To Be Full
+O_DB_URI = environ.get('O_DB_URI', "mongodb+srv://kumarnikhil05848:kumarnikhil05848123123@cluster0.1nr8lgj.mongodb.net/?appName=Cluster0")  # This Db Is For Other Data Store
+F_DB_URI = environ.get('F_DB_URI', "mongodb+srv://kumarnikhil05848:kumarnikhil05848123123@cluster0.1nr8lgj.mongodb.net/?appName=Cluster0")  # This Db Is For File Data Store
+S_DB_URI = environ.get('S_DB_URI', "mongodb+srv://kumarnikhil05848:kumarnikhil05848123123@cluster0.1nr8lgj.mongodb.net/?appName=Cluster0")  # This Db is for File Data Store When First Db Is Going To Be Full
 
 if not MULTIPLE_DATABASE:
     USER_DB_URI = OTHER_DB_URI = FILE_DB_URI = SEC_FILE_DB_URI = DATABASE_URI
@@ -215,6 +215,7 @@ REACTIONS = [
 # Dont remove Credits
 # Developer Telegram @MyselfNeon
 # Update channel - @NeonFiles
+
 
 
 
