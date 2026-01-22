@@ -6,9 +6,9 @@ from Script import script
 id_pattern = re.compile(r'^.\d+$')
 
 # --- BOT INFORMATION ---
-SESSION = environ.get('SESSION', 'MyselfNeon')
-API_ID = int(environ.get('API_ID', ''))
-API_HASH = environ.get('API_HASH', '')
+SESSION = environ.get('SESSION', 'SenseiFileStore')
+API_ID = int(environ.get('API_ID', '20594537'))
+API_HASH = environ.get('API_HASH', 'c505a4e5bb7d482197875888af544f17')
 BOT_TOKEN = environ.get('BOT_TOKEN', "")
 
 # --- KEEP-ALIVE URL ---
@@ -19,61 +19,60 @@ KEEP_ALIVE_URL = environ.get("KEEP_ALIVE_URL", "")  # <-- Add this line
 PICS = (
     environ.get(
         'PICS',
-        'https://files.catbox.moe/ybg6gw.jpg '
-        'https://files.catbox.moe/b5a3dz.jpg '
-        'https://files.catbox.moe/n0xw7h.jpg '
-        'https://files.catbox.moe/fhexii.jpg '
-        'https://files.catbox.moe/v7w8co.jpg '
-        'https://files.catbox.moe/r946bu.jpg'
+        'https://files.catbox.moe/19t7xi.jpg '
+        'https://files.catbox.moe/0fe200.jpg '
+        'https://files.catbox.moe/hsnex5.jpg '
+        'https://files.catbox.moe/we61xa.jpg '
+        'https://files.catbox.moe/img407.jpg '
+        'https://files.catbox.moe/1fhksy.jpg'
     )
 ).split()
 
 # --- ADMINS & USERS ---
 ADMINS = [int(admin) if id_pattern.search(admin) else admin
-          for admin in environ.get('ADMINS', '841851780').split()]  # Multiple IDs separated by space
+          for admin in environ.get('ADMINS', '5770911041').split()]  # Multiple IDs separated by space
 
 auth_users = [int(user) if id_pattern.search(user) else user
-              for user in environ.get('AUTH_USERS', '').split()]  # Multiple IDs separated by space
+              for user in environ.get('AUTH_USERS', '5770911041').split()]  # Multiple IDs separated by space
 
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 
 # --- CHANNELS AND GROUPS ---
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001889915480'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1003554232238'))
 # This Channel Is For When User Start Your Bot Then Bot Send That User Name And Id In This Log Channel, Same For Group Also.
 
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch
-            for ch in environ.get('CHANNELS', '-1002627138181 -1002487845241').split()]
+            for ch in environ.get('CHANNELS', '-1003376011829 -1003261410103 -1003267715571 -1003207592814').split()]
 # This Is File Channel Where You Upload Your File Then Bot Automatically Save It In Database
 
-REQUEST_TO_JOIN_MODE = bool(environ.get('REQUEST_TO_JOIN_MODE', False))  # True → request to join FSUB
-TRY_AGAIN_BTN = bool(environ.get('TRY_AGAIN_BTN', False))                # Retry button for FSUB
+REQUEST_TO_JOIN_MODE = bool(environ.get('REQUEST_TO_JOIN_MODE', True))  # True → request to join FSUB
+TRY_AGAIN_BTN = bool(environ.get('TRY_AGAIN_BTN', True))                # Retry button for FSUB
 
 # --- FORCE SUBSCRIBE CHANNEL ---
-auth_channel = environ.get('AUTH_CHANNEL', '-1002384933640')
+auth_channel = environ.get('AUTH_CHANNEL', '-1002716491516')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
-
 # --- FILE REQUEST CHANNEL ---
-reqst_channel = environ.get('REQST_CHANNEL', '-1002158258466')
+reqst_channel = environ.get('REQST_CHANNEL', '-1003648977887')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
 
 # --- INDEX REQUEST CHANNEL ---
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 
 # --- BOT SUPPORT GROUP ---
-support_chat_id = environ.get('SUPPORT_CHAT_ID', '')
+support_chat_id = environ.get('SUPPORT_CHAT_ID', '-1003639224538')
 SUPPORT_CHAT_ID = int(support_chat_id) if support_chat_id and id_pattern.search(support_chat_id) else None
 
 # --- FILE STORE CHANNEL ---
-FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '-1002487845241')).split()]
+FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
 
 # --- DELETE CHANNEL(s) ---
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch
-                   for dch in environ.get('DELETE_CHANNELS', '-1002231967338').split()]
+                   for dch in environ.get('DELETE_CHANNELS', '-1003524205417').split()]
  
 # --- DATABASE --- 
 DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "NeonFilter")
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'neoncollection')
+DATABASE_NAME = environ.get('DATABASE_NAME', "filter_bot")
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Files')
 
 MULTIPLE_DATABASE = bool(environ.get('MULTIPLE_DATABASE', False))
 
@@ -96,33 +95,33 @@ PREMIUM_AND_REFERAL_MODE = bool(environ.get('PREMIUM_AND_REFERAL_MODE', True)) #
 # --- If PREMIUM_AND_REFERAL_MODE is True Then Fill Below Variable, If False Then No Need To Fill ---
 PREMIUM_AND_REFERAL_MODE = bool(environ.get('PREMIUM_AND_REFERAL_MODE', True))
 
-REFERAL_COUNT = int(environ.get('REFERAL_COUNT', '5'))
-REFERAL_PREMEIUM_TIME = environ.get('REFERAL_PREMEIUM_TIME', '1month')
-PAYMENT_QR = environ.get('PAYMENT_QR', 'https://files.catbox.moe/tc8drk.jpg')
+REFERAL_COUNT = int(environ.get('REFERAL_COUNT', '20'))
+REFERAL_PREMEIUM_TIME = environ.get('REFERAL_PREMEIUM_TIME', '1week')
+PAYMENT_QR = environ.get('PAYMENT_QR', 'https://ibb.co/678wSTfC')
 PAYMENT_TEXT = environ.get(
     'PAYMENT_TEXT',
     '<b><blockquote>‣ 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐏𝐋𝐀𝐍𝐒 📝</blockquote>\n'
-    '<i>• 30Rs - 01 Week\n• 50Rs - 01 Month\n• 120Rs - 03 Months\n• 220Rs - 06 Months</i>\n\n'
+    '<i>• 19s - 01 Week\n• 49Rs - 01 Month\n• 129Rs - 03 Months\n• 229Rs - 06 Months</i>\n\n'
     '<blockquote>‣ 𝐏𝐋𝐀𝐍 𝐁𝐄𝐍𝐄𝐅𝐈𝐓𝐒 ✨</blockquote>\n'
     '<i>• No Need To Verify\n• No Need To Open Links\n• Direct Files\n• Ad-Free Experience\n'
     '• High Speed Download\n• Multiplayer Streaming Links\n• Unlimited Movies, Animes & Series\n'
     '• 24×7 Admin Support\n• Requests Will Be Completed Within 01 Hour Of Submission If Available</i>\n\n'
-    '<blockquote>‣ 𝐔𝐏𝐈 𝐈𝐃 🆔</blockquote> - <code>neonan23@ibl</code>\n\n'
+    '<blockquote>‣ 𝐔𝐏𝐈 𝐈𝐃 🆔</blockquote> - <code>kumarnikhil05848-1@oksbi</code>\n\n'
     '<i>• Click /myplan To Check Your Plan\n• Send Screenshots After Payment\n'
     '• After Sending Screenshot Give Us Some Time To Add You In Premium</i></b>'
 )
 
 # --- CLONE SETTINGS ---
 # Clone Information : If Clone Mode Is True Then Bot Clone Other Bots.
-CLONE_MODE = bool(environ.get('CLONE_MODE', True)) # Set True or False
+CLONE_MODE = bool(environ.get('CLONE_MODE', False)) # Set True or False
 CLONE_DATABASE_URI = environ.get('CLONE_DATABASE_URI', "") # Necessary If clone mode is true
-PUBLIC_FILE_CHANNEL = environ.get('PUBLIC_FILE_CHANNEL', 'NeonCodes') # Public Channel Username Without @ or without https://t.me/ and Bot Is Admin With Full Right.
+PUBLIC_FILE_CHANNEL = environ.get('PUBLIC_FILE_CHANNEL', 'AnimeZerox') # Public Channel Username Without @ or without https://t.me/ and Bot Is Admin With Full Right.
 
 # --- LINKS --- 
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+o1s-8MppL2syYTI9')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/neonfiles')
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Talk2neonBot') # Support Chat Link Without https:// or @
-OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/MyselfNeon')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+mcWSGZS0qkUxOTQ1')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Anime_Sensei_official')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '+B1VMLwRnMk0xZDA1') # Support Chat Link Without https:// or @
+OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/Nothing_else_bro')
 
 # --- FEATURES (True/False Switches) ---
 AI_SPELL_CHECK = bool(environ.get('AI_SPELL_CHECK', True))
@@ -137,15 +136,15 @@ LONG_IMDB_DESCRIPTION = bool(environ.get("LONG_IMDB_DESCRIPTION", False))
 SPELL_CHECK_REPLY = bool(environ.get("SPELL_CHECK_REPLY", True))
 MELCOW_NEW_USERS = bool(environ.get('MELCOW_NEW_USERS', True))
 PROTECT_CONTENT = bool(environ.get('PROTECT_CONTENT', False))
-PUBLIC_FILE_STORE = bool(environ.get('PUBLIC_FILE_STORE', True))
+PUBLIC_FILE_STORE = bool(environ.get('PUBLIC_FILE_STORE', False))
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
 # --- TOKEN VERIFICATIONS --- 
-VERIFY = bool(environ.get('VERIFY', False))
-VERIFY_SHORTLINK_URL = environ.get('VERIFY_SHORTLINK_URL', '')
-VERIFY_SHORTLINK_API = environ.get('VERIFY_SHORTLINK_API', '')
-VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', '')
+VERIFY = bool(environ.get('VERIFY', True ))
+VERIFY_SHORTLINK_URL = environ.get('VERIFY_SHORTLINK_URL', 'linkshortify.com')
+VERIFY_SHORTLINK_API = environ.get('VERIFY_SHORTLINK_API', '12d3a3eded5809bc72fb3367fa852a3e02756d2f')
+VERIFY_TUTORIAL = environ.get('VERIFY_TUTORIAL', 'https://t.me/+MCWU-dOQ4yBlMjk1')
 
 # --- If You Fill Second Shortner Then Bot Attach Both First And Second Shortner And Use It For Verify ---
 VERIFY_SECOND_SHORTNER = bool(environ.get('VERIFY_SECOND_SHORTNER', False))
@@ -155,15 +154,15 @@ VERIFY_SND_SHORTLINK_API = environ.get('VERIFY_SND_SHORTLINK_API', '')
 
 # --- SHORTLINK SETTINGS ---
 SHORTLINK_MODE = bool(environ.get('SHORTLINK_MODE', False))
-SHORTLINK_URL = environ.get('SHORTLINK_URL', '')
-SHORTLINK_API = environ.get('SHORTLINK_API', '')
-TUTORIAL = environ.get('TUTORIAL', '')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'linkshortify.com')
+SHORTLINK_API = environ.get('SHORTLINK_API', '12d3a3eded5809bc72fb3367fa852a3e02756d2f')
+TUTORIAL = environ.get('TUTORIAL', 'https://t.me/+MCWU-dOQ4yBlMjk1')
 
 # --- MISCELLANEOUS SETTINGS --- 
-CACHE_TIME = int(environ.get('CACHE_TIME', 1800))
+CACHE_TIME = int(environ.get('CACHE_TIME', 43200))
 MAX_B_TN = environ.get("MAX_B_TN", "5")
 PORT = environ.get("PORT", "8080")
-MSG_ALRT = environ.get('MSG_ALRT', 'Powered by @NeonFiles ❤️✨')
+MSG_ALRT = environ.get('MSG_ALRT', 'Powered by @Nothing_else_bro ❤️✨')
 
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
@@ -201,12 +200,8 @@ RENAME_MODE = bool(environ.get('RENAME_MODE', True)) # Set True or False
 # Get this key for FREE from: https://aistudio.google.com/
 GEMINI_API_KEY = environ.get('GEMINI_API_KEY', "")
 
-# --- IMGBB API ---
-# Get your free API key from: https://api.imgbb.com/
-IMGBB_API_KEY = environ.get('IMGBB_API_KEY', "")
-
 # --- AUTO APPROVE ---
-AUTO_APPROVE_MODE = bool(environ.get('AUTO_APPROVE_MODE', False))  # Set True or False
+AUTO_APPROVE_MODE = environ.get("AUTO_APPROVE_MODE", "False").lower() == "true"  # Set True or False
 # Auto Approve Info : If True Then Bot Approve New Upcoming Join Request Else Not
 
 # --- START COMMAND REACTIONS ---
@@ -220,6 +215,33 @@ REACTIONS = [
 # Dont remove Credits
 # Developer Telegram @MyselfNeon
 # Update channel - @NeonFiles
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
